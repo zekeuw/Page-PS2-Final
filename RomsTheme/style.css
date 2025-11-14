@@ -1,0 +1,346 @@
+/*
+ Theme Name: RomsPS2
+ Theme URI: http://PS2roms.com
+ Author: Tu Nombre
+ Author URI: http://PS2roms.com
+ Description: Tema para un sitio relacionado con la PlayStation 2
+ Version: 1.0
+*/
+
+html {
+    margin: 0px !important;
+}
+
+
+body {
+    background-image: radial-gradient(#6342C5, #000000);
+    background-size: cover; 
+    background-position: center center; 
+    background-repeat: no-repeat;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh; 
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+header {
+    background-color: #414587; 
+    padding: 20px;
+    color: white;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo img {
+    max-height: 50px; 
+}
+
+
+
+nav {
+    font-size: 16px;
+}
+
+.main-menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+.main-menu li {
+    margin: 0 15px;
+}
+
+.main-menu li a {
+    color: white;
+    text-decoration: none;
+    font-weight: normal;
+    transition: color 0.3s ease;
+}
+
+.main-menu li a:hover {
+    color: #f0f0f0; 
+}
+
+/* --- ESTILOS RESPONSIVE HEADER --- */
+
+/* 1. Ocultar el botón de menú en escritorio por defecto */
+.menu-toggle {
+    display: none; 
+    background-color: #5d5d9c; /* Fondo para que se vea mejor */
+    border: none; /* Quitamos el borde para un look más moderno */
+    color: white;
+    font-size: 30px; /* Tamaño del icono de hamburguesa */
+    cursor: pointer;
+    padding: 5px 12px;
+    border-radius: 8px; /* Bordes más redondeados */
+    line-height: 1;
+    transition: background-color 0.2s;
+    outline: none;
+}
+
+.menu-toggle:hover {
+    background-color: #7979b9;
+}
+
+
+/* Reglas de Media Query para dispositivos móviles (Hasta 800px) */
+@media (max-width: 800px) {
+    
+    /* 2. Mostrar el botón del menú en móvil */
+    .menu-toggle {
+        display: block;
+    }
+
+    /* 3. Ocultar el menú por defecto en móvil */
+    #primary-menu-nav {
+        display: none;
+        width: 100%;
+        order: 3;
+        flex-basis: 100%;
+        margin-top: 10px;
+    }
+    
+    /* 4. Mostrar el menú cuando la clase 'toggled' está activa (por JS) */
+    #primary-menu-nav.toggled {
+        display: block;
+    }
+    
+    /* Cambiar el comportamiento del contenedor para apilar elementos */
+    .header-container {
+        flex-wrap: wrap;
+    }
+    
+    /* Cambiar el menú de horizontal a vertical */
+    .main-menu {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .main-menu li {
+        margin: 0;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    
+    .main-menu li:last-child {
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .main-menu li a {
+        padding: 15px;
+        display: block;
+    }
+}
+
+/* --- FOOTER Y OTROS ESTILOS (MANTENIDOS) --- */
+
+.site-footer {
+    background: #9A72DF;
+    color: white;
+    padding: 40px 0;
+    border-top: 4px solid rgba(0,0,0,0.05);
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+    padding: 0 20px;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+
+
+.footer-brand {
+    min-width: 220px;
+}
+.brand-title {
+    font-size: 1.6rem;
+    margin: 0 0 14px 0;
+}
+
+.footer-social a {
+    display: inline-block;
+    margin-right: 12px;
+    color: white;
+    font-size: 1.2rem;
+    width: 36px;
+    height: 36px;
+    line-height: 36px;
+    text-align: center;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.08);
+    transition: background 0.15s, transform 0.15s;
+}
+.footer-social a:hover {
+    background: rgba(255,255,255,0.18);
+    transform: translateY(-2px);
+}
+
+/* Columnas con enlaces */
+.footer-links {
+    display: flex;
+    gap: 50px;
+    flex-wrap: wrap;
+    align-items: flex-start;
+}
+
+.footer-col h4 {
+    font-size: 1rem;
+    margin: 0 0 8px 0;
+}
+
+.footer-col ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.footer-col li {
+    margin-bottom: 8px;
+}
+
+.footer-col a {
+    color: white;
+    text-decoration: none;
+    opacity: 0.95;
+    transition: opacity 0.12s, color 0.12s;
+}
+
+.footer-col a:hover {
+    text-decoration: underline;
+    opacity: 1;
+}
+.videojuegos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 25px;
+    margin-top: 20px;
+}
+.videojuego-item {
+    background: transparent;
+    border-radius: 15px;
+    padding: 10px;
+    text-align: center;
+    box-shadow: none;
+    transition: transform 0.2s;
+}
+.videojuego-item:hover {
+    transform: scale(1.03);
+}
+.videojuego-item .caratula {
+    position: relative;
+    width: 100%;
+    padding-top: 150%; /* proporción 2:3 → 1.5 alto por cada ancho */
+    overflow: hidden;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    background: #000;
+}
+
+.videojuego-item .caratula img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.videojuego-item h3 {
+    font-size: 1.1rem;
+    margin: 5px 0;
+}
+.videojuego-item p {
+    font-size: 0.9rem;
+    color: #ccc;
+    margin: 0;
+}
+.seccion-titulo {
+    font-size: 1.6rem;
+    margin-top: 40px;
+    border-bottom: 1px solid #555;
+    padding-bottom: 8px;
+}
+.videojuego-item p a {
+    color: white !important;
+    text-decoration: none;
+}
+
+.videojuego-item p a:hover {
+    text-decoration: underline;
+}
+.videojuegos-grid {
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)) !important;
+}
+.testimonios-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    padding: 20px;
+}
+
+.testimonio-card {
+    background: #6B5ABA; 
+    color: white;
+    padding: 25px;
+    border-radius: 12px;
+    min-height: 180px;
+}
+
+.testimonio-avatar {
+    margin-top: 25px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.testimonio-avatar img {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.testimonio-info span {
+    display: block;
+    color: #d0c7ff; 
+    font-size: 0.9rem;
+}
+
+
+
+@media (max-width: 900px) {
+    .footer-container {
+        padding: 0 24px;
+    }
+    .footer-links {
+        gap: 30px;
+    }
+}
+@media (max-width: 768px) {
+    /* No hay cambios aquí de momento */
+}
+
+@media (max-width: 640px) {
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 20px;
+    }
+    .footer-links {
+        flex-direction: column;
+        gap: 18px;
+    }
+    .footer-brand {
+        order: 0;
+    }
+}
